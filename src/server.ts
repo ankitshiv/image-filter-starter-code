@@ -15,11 +15,9 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
   app.get("/filteredimage", async (req, res) => {
     let imageUrl = req.query.image_url;
-    let filteredPath;
     if (!!imageUrl && imageUrl !== '') {
-      await filterImageFromURL(imageUrl).then(async (imageFilePath) => {
-        filteredPath = imageFilePath;
-        await res.sendFile(imageFilePath, (err) => {
+      filterImageFromURL(imageUrl).then(async (imageFilePath) => {
+        res.sendFile(imageFilePath, (err) => {
           if (err) {
             console.log("something went wrong while serving file");
           } else {
@@ -27,7 +25,8 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
           }
         });
       }).catch((e) => {
-        res.status(500).send({message: "Something went wrong while fetching the image."});
+        console.log(e);
+        res.status(500).send({message: "Something went wrong while fetching the image.", error: e});
       });
     } else {
       res.send("try GET /filteredimage?image_url={{}}");
