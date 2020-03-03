@@ -3,12 +3,23 @@
 Udagram is a simple cloud application developed alongside the Udacity Cloud Engineering Nanodegree. It allows users to register and log into a web client, post photos to the feed, and process photos using an image filtering microservice.
 
 The project is split into three parts:
-1. [The Simple Frontend](https://github.com/udacity/cloud-developer/tree/master/course-02/exercises/udacity-c2-frontend)
-A basic Ionic client web application which consumes the RestAPI Backend. [Covered in the course]
-2. [The RestAPI Backend](https://github.com/udacity/cloud-developer/tree/master/course-02/exercises/udacity-c2-restapi), a Node-Express server which can be deployed to a cloud service. [Covered in the course]
-3. [The Image Filtering Microservice](https://github.com/udacity/cloud-developer/tree/master/course-02/project/image-filter-starter-code), the final project for the course. It is a Node-Express application which runs a simple script to process images. [Your assignment]
+1. [The Simple Frontend](https://github.com/ankitshiv/udacity-c2-frontend)
+A basic Ionic client web application which consumes the RestAPI Backend. 
+2. [The RestAPI Backend](https://github.com/ankitshiv/udacity-c2-restapi), a Node-Express server which can be deployed to a cloud service.
+3. [The Image Filtering Microservice](https://github.com/ankitshiv/image-filter-starter-code), the final project for the course. It is a Node-Express application which runs a simple script to process images.
 
-## Tasks
+## Links
+1. s3 bucket served static website (simple frontend) - http://udashivharefrontend.s3-website.us-east-2.amazonaws.com
+2. Image service URL interfaced with Route53 Domain name - http://image-service.drigbhu.com; use /filterimage?image_url={{}} to get filtered image
+3. Udacity-c2-restapi with updated endpoints interfaced with Route53 Domain name -  http://udagram-backend.drigbhu.com; refer to [link](https://github.com/ankitshiv/image-filter-starter-code) for endpoint info
+
+## Tasks completed:
+
+1. new endpoint created and the app is served on EBS - image-filter-starter-code-dev22222222.us-east-1.elasticbeanstalk.com
+2. created endpoint can be found here - https://github.com/ankitshiv/image-filter-starter-code/blob/master/src/server.ts#L16
+3. new endpoint in rest api with required auth created - https://github.com/ankitshiv/udacity-c2-restapi/blob/master/src/controllers/v0/feed/routes/feed.router.ts#L55
+4. image service being served using custom domain name - http://image-service.drigbhu.com
+5. Deployment screenshot added
 
 ### Setup Node Environment
 
